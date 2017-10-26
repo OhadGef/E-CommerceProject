@@ -15,13 +15,13 @@
     <script src="js/controller.js"></script>
 
 </head>
-<body>
+<body onload="getPrice()">
 <div id="container">
     <div id="panel">
         <div id="ios">
             <div id="details-ios">
                 <h2>רכיב אנג'י לאייפון</h2>
-                <p id="price-ios">מחיר:  </p>
+                <p> מחיר:  <span id="price-ios"></span></p>
                 <p> כמות: </p>
                 <select id="ios-number">
                     <option value="0">0</option>
