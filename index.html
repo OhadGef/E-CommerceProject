@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Engie App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/controller.js"></script>
+
+</head>
+<body>
+<div id="container">
+    <div id="panel">
+        <div id="ios">
+            <div id="details-ios">
+                <h2>רכיב אנג'י לאייפון</h2>
+                <p id="price-ios">מחיר:  </p>
+                <p> כמות: </p>
+                <select id="ios-number">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <img id="pic1"src="https://buy-obd.engieapp.com/img/buy-iosandroid.png">
+            <button onclick="BuyProduct()" > קנייה</button>
+        </div>
+        <div id="android">
+            <div id="details-android">
+                <h2>רכיב אנג'י לאנדרואיד</h2>
+                <p id="price-android">מחיר:  </p>
+                <p> כמות: </p>
+                <select id="android-number">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <img id="pic2" src="https://buy-obd.engieapp.com/img/buy-android.png">
+            <button onclick="BuyProduct()" > קנייה</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

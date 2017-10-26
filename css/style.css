@@ -1,0 +1,36 @@
+body{
+    background-color: #9d9d9d;
+}
+h3 p{
+    float: right;
+}
+#container{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#panel{
+    display: block;
+}
+
+#ios {
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    width: 470px;
+    height: 350px;
+    margin-left: 150px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+
+}
+
+#android {
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    width: 470px;
+    height: 350px;
+    margin-left: 150px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    }
