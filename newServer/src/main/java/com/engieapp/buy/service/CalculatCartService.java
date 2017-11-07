@@ -1,13 +1,13 @@
 package com.engieapp.buy.service;
 
-import static org.mockito.Matchers.doubleThat;
 
-import java.util.List;
 
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.engieapp.buy.model.Cart;
+import com.engieapp.buy.model.ShopingCartForm;
 import com.engieapp.buy.repository.ProductRepository;
 
 @Service
@@ -25,7 +25,7 @@ public class CalculatCartService {
 		
 	}
 
-	public double Calculat(Cart c) {
+	public ShopingCartForm Calculat(Cart c) throws JSONException {
 		
 		//get the number of devices. 
 		int iosNumber = Integer.parseInt(c.getIos());
@@ -52,10 +52,13 @@ public class CalculatCartService {
 			}
 			
 		}
-		return total = totalIos+totalAndroid ;
+		total = totalIos+totalAndroid;
 		
-		
-		//Crate a session id and send it to the controller.
+		ShopingCartForm shopingCartForm = new ShopingCartForm();
+		shopingCartForm.setAndroidPrice(totalAndroid);
+		shopingCartForm.setIosPrice(totalIos);
+		shopingCartForm.setTotal(total);
+		return shopingCartForm;
 		
 		}
 		
