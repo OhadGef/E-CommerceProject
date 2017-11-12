@@ -23,10 +23,10 @@ function getPrice(){
 function BuyProduct () {
 
     var ios = document.getElementById("ios-number");
-    var iosNumber = Number(ios.options[ios.selectedIndex].value);
+    var iosNumber = parseInt(ios.options[ios.selectedIndex].value);
 
     var android = document.getElementById("android-number");
-    var androidNumber = Number(android.options[android.selectedIndex].value);
+    var androidNumber = parseInt(android.options[android.selectedIndex].value);
 
     var totalIos = 0;
     var totalAndroid = 0 ;
@@ -75,10 +75,15 @@ function creatEndPoint(ios,android) {
         url:'http://localhost:8081/createEndPoint',
         dataType:'json',
         type: 'POST',
-        data: {"ios":ios,"android":android},
-        cache:false,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({"ios":ios,"android":android}),
         success:function (data) {
-        console.log(data);
+            $(data).each(function (index,value) {
+                console.log(value)
+            });
         }
     });
 
