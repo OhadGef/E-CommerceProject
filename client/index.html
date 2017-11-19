@@ -4,53 +4,101 @@
     <meta charset="UTF-8">
     <title>Engie App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/controller.js"></script>
 
 </head>
 <body onload="getPrice()">
-<div id="container">
+<div id="container" class="container">
     <div id="panel">
-        <div id="ios">
-            <div id="details-ios">
-                <h2>רכיב אנג'י לאייפון</h2>
-                <p> מחיר:  <span id="price-ios"></span></p>
-                <p> כמות: </p>
-                <select id="ios-number">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
+        <!-- Trigger the modal with a button -->
+        <button type="button" id="cart" class="btn btn-default"  data-target="#myModal" data-toggle="modal" style="visibility: hidden">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <br>  <h3 class="modal-title"> סל הקניות שלך </h3>
+                    </div>
+                    <div class="modal-body">
+                        <div id="ios-basket">
+                            <h4>רכיבי אנג'י לאיפון:</h4>
+                            <div id="iosBasket"></div>
+                        </div>
+
+                        <div id="android-basket">
+                            <h4>רכיבי אנג'י לאנדרואיד:</h4>
+                            <div id="androidBasket"></div>
+                        </div>
+                        <div id="total">
+                            <h4> מחיר כולל: </h4>
+                        </div>
+                        <div id="buy"></div>
+
+                    </div>
+
+                </div>
+
             </div>
-            <img id="pic1"src="https://buy-obd.engieapp.com/img/buy-iosandroid.png">
-            <button onclick="BuyProduct()" > קנייה</button>
         </div>
-        <div id="android">
-            <div id="details-android">
-                <h2>רכיב אנג'י לאנדרואיד</h2>
-                <p id="price-android">מחיר:  </p>
-                <p> כמות: </p>
-                <select id="android-number">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
+        <div id="ios" class="center-block">
+            <div id="details-ios">
+                <img id="pic"src="https://buy-obd.engieapp.com/img/buy-iosandroid.png" class="img-rounded">
+                <div id="description">
+                    <h2>רכיב אנג'י לאייפון</h2>
+                    <p> מחיר:  <span id="price-ios"></span></p>
+                    <p style="display: inline-block"> כמות: </p>
+                    <select id="ios-number">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
             </div>
-            <img id="pic2" src="https://buy-obd.engieapp.com/img/buy-android.png">
-            <button onclick="BuyProduct()" > קנייה</button>
+            <button onclick="BuyProduct()" type="button" id="buy-now" class="btn btn-default"  data-target="#myModal" data-toggle="modal">
+                <span> קנה עכשיו </span>
+            </button>
+        </div>
+
+
+        <div id="android" class="center-block">
+            <div id="details-android">
+                <img id="pic" src="https://buy-obd.engieapp.com/img/buy-android.png" class="img-rounded">
+                <div id="description">
+                    <h2>רכיב אנג'י לאנדרואיד</h2>
+                    <p id="price-android">מחיר:  </p>
+                    <p style="display: inline-block"> כמות: </p>
+                    <select id="android-number">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+            </div>
+            <button onclick="BuyProduct()" type="button" id="buy-now" class="btn btn-default"  data-target="#myModal" data-toggle="modal">
+                <span> קנה עכשיו </span>
+            </button>
+            <!--<button onclick="BuyProduct()" data-toggle="modal" > קנייה</button>-->
         </div>
     </div>
 </div>
+
+
+
 </body>
 </html>

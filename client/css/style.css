@@ -1,36 +1,38 @@
 body{
-    background-color: #9d9d9d;
+    background-color: #d3d3d3;
+    direction: rtl;
 }
-h3 p{
+
+#pic{
+    float: right;
+    max-width: 150px;
+    max-height: 200px;
+
+}
+#description{
+    margin-right: 10px;
     float: right;
 }
-#container{
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+
+#buy-now{
+    background-color: #0ac829;
+    color: #FFFFFF;
+    float: left;
+    margin-top:80px;
+    width: 130px;
+    height: 40px;
 }
 
-#panel{
-    display: block;
-}
+#ios ,#android {
 
-#ios {
     background-color: white;
-    padding: 40px 30px 30px 30px;
+    padding: 27px 40px 30px 30px;
     width: 470px;
-    height: 350px;
-    margin-left: 150px;
-    margin-right: 10px;
+    height: 300px;
     margin-bottom: 40px;
-
+    border-radius: 25px;
 }
 
-#android {
-    background-color: white;
-    padding: 40px 30px 30px 30px;
-    width: 470px;
-    height: 350px;
-    margin-left: 150px;
-    margin-right: 10px;
-    margin-bottom: 40px;
-    }
+.modal-body{
+    height: 320px;
+}

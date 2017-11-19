@@ -49,14 +49,6 @@ public class CartController {
 		
 		return json.toString();
 	}
-
-	@CrossOrigin
-	@PostMapping(value = "/test",produces = "application/json",consumes = "application/json")
-	public String test(@RequestBody Cart cart) {
-		
-		System.out.println(cart.getIos());
-		return cart.getIos() ;
-	}
 	
 	
 	@CrossOrigin

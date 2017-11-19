@@ -65,26 +65,40 @@ function BuyProduct () {
 
 
     //send the number of products to the server
-    creatEndPoint(iosNumber,androidNumber);
+    var x = creatEndPoint(iosNumber,androidNumber);
+    console.log(x);
 
+    // document.cookie = "ios="+iosNumber+";"+"iosPrice="+iosPrice+";";
+    document.getElementById("iosBasket").innerHTML = " כמות:  "+ iosNumber + " מחיר: "+ iosPrice;
+    document.getElementById("androidBasket").innerHTML = " כמות:  "+ androidNumber + " מחיר: "+ androidPrice;
+
+    document.getElementById("total").innerHTML = "<h4> מחיר כולל: </h4>"+ totalPrice;
+    document.getElementById("buy").innerHTML = '  <a href="'+x.checkoutUrl+'" class="btn btn-info" role="button" id="buy-now" >המשך תשלום</a>'
+    document.getElementById("cart").style.visibility = "visible";
 }
 
 
 function creatEndPoint(ios,android) {
+    var endPoint;
     $.ajax({
         url:'http://localhost:8081/createEndPoint',
         dataType:'json',
         type: 'POST',
+        async: false,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         data: JSON.stringify({"ios":ios,"android":android}),
         success:function (data) {
+
             $(data).each(function (index,value) {
-                console.log(value)
+                // console.log(value)
+                endPoint = value
             });
+
         }
     });
-
+    return endPoint;
 }
+
